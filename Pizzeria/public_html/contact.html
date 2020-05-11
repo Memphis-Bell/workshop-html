@@ -6,11 +6,33 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Contact</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label, input {
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>
+            <form action="receivedContact.php" target="_blank" method="POST">
+                <fieldset>
+                    <legend>
+                        Formulaire de contact
+                    </legend>
+                    <label for="nom">Nom : </label><input type="text" id="nom" name="nom"><br>
+                    <label for="prenom">Prenom : </label><input type="text" id="prenom" name="prenom"><br>
+                    <label for="email">Email : </label><input type="text" id="email" name="email"><br>
+                    <label for="tel">Numero de téléphone : </label><input type="text" id="tel" name="tel"><br>
+                    <label for="channel">Canal de contact : </label><select id="channel" name="channel"><option value="email">email</option><option value="tel">Téléphone</option></select><br>
+                    <label for="message">Message : </label><br>
+                    <textarea id="message" name="message" style="width:100%" maxlength="1000" rows="10"></textarea><br>
+                    <input type="submit" name="Submit" value="Envoyer">
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>
