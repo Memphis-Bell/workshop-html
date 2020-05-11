@@ -19,6 +19,9 @@ and open the template in the editor.
             #nos_pizzas, tr, th, td {
                 text-align: center;
             }
+            tr {
+                width: 100%;
+            }
             th {
                 font-weight: bold;
                 font-size: 12px;
@@ -42,11 +45,9 @@ and open the template in the editor.
                         <form id="myForm">
                             <fieldset>
                                 <legend>Ajouter une pizza</legend>
-                                <label for="id">Id</label><br>
-                                <input type="text" id="id" name="id"><br>
-                                <label for="libelle">Libelle</label><br>
+                                <label for="libelle">Nom de la pizza</label><br>
                                 <input type="text" id="libelle" name="libelle"><br>
-                                <label for="reference">Référence</label><br>
+                                <label for="reference">Code référence</label><br>
                                 <input type="text" id="reference" name="reference"><br>
                                 <label for="prix">Prix</label><br>
                                 <input type="text" id="prix" name="prix"><br><br>
@@ -111,6 +112,7 @@ and open the template in the editor.
             <br><button type="button"><a href="index.html">Retour</a></button>
         </div>
         <script>
+            var compteur = 6;
             class Pizza {
                 constructor(id, libelle, reference, prix) {
                     this.id = id;
@@ -123,16 +125,20 @@ and open the template in the editor.
                 var form = document.getElementById("myForm");
                 var table = document.getElementById("nos_pizzas");
                 var row = table.insertRow(-1);
-                var text = "";
-                for (i=0; i < form.length-1; i++) {
-                    var cell = row.insertCell(i);
-                    cell.innerHTML = form.elements[i+1].value;
-                    text += form.elements[i+1].value + "<br>";
-                }
+                var cell_id = row.insertCell(0);
+                cell_id.innerHTML = compteur + 1;
+                compteur += 1;
+                var cell_libelle = row.insertCell(1);
+                cell_libelle.innerHTML = form.elements[1].value;
+                var cell_reference = row.insertCell(2);
+                cell_reference.innerHTML = form.elements[2].value;
+                var cell_prix = row.insertCell(3);
+                cell_prix.innerHTML = form.elements[3].value;
             }
             function removePizza() {
                 var table = document.getElementById("nos_pizzas");
                 table.deleteRow(-1);
+                compteur -= 1;
             }
         </script>
     </body>
