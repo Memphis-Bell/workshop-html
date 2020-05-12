@@ -8,138 +8,203 @@ and open the template in the editor.
     <head>
         <title>Nos Pizzas</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
         <style>
-            #nos_pizzas {
-                position: relative;
-                width:100%;
-                border: 1px double black;
-                margin-left: 1%;
-            }
-            #nos_pizzas, tr, th, td {
-                text-align: center;
-            }
-            tr {
-                width: 100%;
-            }
-            th {
-                font-weight: bold;
-                font-size: 12px;
-                height: 18px;
-            }
-            td {
-                font-size: 10px;
-                height: 16px;
-            }
-            form {
-                position: relative;
-                width:100%;
-            }
+            
         </style>
     </head>
     <body>
-        <div>
-            <table style="width:50%">
-                <tr>
-                    <th>
-                        <form id="myForm">
-                            <fieldset>
-                                <legend>Ajouter une pizza</legend>
-                                <label for="libelle">Nom de la pizza</label><br>
-                                <input type="text" id="libelle" name="libelle"><br>
-                                <label for="reference">Code référence</label><br>
-                                <input type="text" id="reference" name="reference"><br>
-                                <label for="prix">Prix</label><br>
-                                <input type="text" id="prix" name="prix"><br><br>
-                                <button type="reset">reset</button>
-                            </fieldset>
-                        </form>
-                        <button onclick="ajoutPizza()">Ajouter !</button><button onclick="removePizza()">Supprimer une pizza</button>
-                    </th>
-                    <th>
-                        <table id="nos_pizzas">
-                            <tr>
-                                <th>Id</th>
-                                <th>Libelle</th>
-                                <th>Référence</th>
-                                <th>Prix</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Reine</td>
-                                <td>PREI</td>
-                                <td>9.99</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Regina</td>
-                                <td>PREG</td>
-                                <td>9.00</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Napolitaine</td>
-                                <td>PNAP</td>
-                                <td>9.99</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>4 Fromages</td>
-                                <td>P4FR</td>
-                                <td>9.99</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Chorizo</td>
-                                <td>PCHO</td>
-                                <td>9.99</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>4 Saisons</td>
-                                <td>P4SA</td>
-                                <td>9.00</td>
-                            </tr>
-                        </table>
-                    </th>
-                </tr>
-             </table>
-        </div>
-        <div id="demo">
+        <header class=".container" >
+            <img src="img/pizza_bandeau.png" style="width:100%" alt=""/>
             
+        </header>
+        <div class=".container text-center">
+            <div class="row mt-2 mb-2" style="font-size: xx-large; font-weight:bold; background-color: #e3e3e3">
+                <div class="col-12">
+                    Nos pizzas
+                </div>
+            </div>
+            <div class="row mt-2 mb-2" style="font-size: x-large; font-weight:bold; background-color: #f1f1f1">
+                <div class="col-1">
+                    <p>
+                        Id
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Nom
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        Référence
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Prix
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Photo
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>
+                        1
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Reine
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        PREI
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        9,99€
+                    </p>
+                </div>
+                <div class="col-3">
+                    <img style="width:150px; height:150px" src="img/reine.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>
+                        2
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Regina
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        PREG
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        9,99€
+                    </p>
+                </div>
+                <div class="col-3">
+                    <img style="width:150px; height:150px" src="img/regina.jpeg" alt=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>
+                        3
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Napolitaine
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        PNAP
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        9,99€
+                    </p>
+                </div>
+                <div class="col-3">
+                    <img style="width:150px; height:150px" src="img/napolitaine.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>
+                        4
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        4 Fromages
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        P4FR
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        9,99€
+                    </p>
+                </div>
+                <div class="col-3">
+                    <img style="width:150px; height:150px" src="img/4from.jpeg" alt=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>
+                        5
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        Végétarienne
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        PVEG
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        9,99€
+                    </p>
+                </div>
+                <div class="col-3">
+                    <img style="width:150px; height:150px" src="img/végé.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>
+                        6
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        4 Saisons
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        P4SA
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p>
+                        9,99€
+                    </p>
+                </div>
+                <div class="col-3">
+                    <img style="width:150px; height:150px" src="img/4sais.jpg" alt=""/>
+                </div>
+            </div>
         </div>
-        <div>
-            <br><button type="button"><a href="index.html">Retour</a></button>
-        </div>
-        <script>
-            var compteur = 6;
-            class Pizza {
-                constructor(id, libelle, reference, prix) {
-                    this.id = id;
-                    this.libelle = libelle;
-                    this.reference = reference;
-                    this.prix = prix;
-                }
-            }
-            function ajoutPizza() {
-                var form = document.getElementById("myForm");
-                var table = document.getElementById("nos_pizzas");
-                var row = table.insertRow(-1);
-                var cell_id = row.insertCell(0);
-                cell_id.innerHTML = compteur + 1;
-                compteur += 1;
-                var cell_libelle = row.insertCell(1);
-                cell_libelle.innerHTML = form.elements[1].value;
-                var cell_reference = row.insertCell(2);
-                cell_reference.innerHTML = form.elements[2].value;
-                var cell_prix = row.insertCell(3);
-                cell_prix.innerHTML = form.elements[3].value;
-            }
-            function removePizza() {
-                var table = document.getElementById("nos_pizzas");
-                table.deleteRow(-1);
-                compteur -= 1;
-            }
-        </script>
     </body>
 </html>
